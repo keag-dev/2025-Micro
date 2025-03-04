@@ -34,10 +34,8 @@ def pir_handler(pin):
 pir1.irq(trigger=machine.Pin.IRQ_RISING, handler=pir_handler)
 pir2.irq(trigger=machine.Pin.IRQ_RISING, handler=pir_handler)
 
+grnLed.on()
 while True:
-    redLed.on()
-    grnLed.off()
-    utime.sleep(1)
-    grnLed.on()
-    redLed.off()
+    redLed.toggle()
+    grnLed.toggle()
     utime.sleep(1)
